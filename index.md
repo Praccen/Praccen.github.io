@@ -7,7 +7,10 @@ Hello and welcome to my portfolio website. My name is Gustav Björk!
 # S.P.L.A.S.H2O
 Splash is a ray traced online first person shooter. The story is that a scientist has cloned himself in order to have someone to play games with. He then proceeds to turn of all the lights in his laboratory and give all his clones some candles and a water gun each. What happens next is a last man standing water fight where the goal is to eliminate other players by extinguishing their candles. The game can be played online with up to 12 players in the same game.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NXo2Lea5HGo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="container">
+<iframe src="https://www.youtube.com/embed/NXo2Lea5HGo" 
+frameborder="0" allowfullscreen class="video"></iframe>
+</div>
 
 # Scuffed Newton
 Text
