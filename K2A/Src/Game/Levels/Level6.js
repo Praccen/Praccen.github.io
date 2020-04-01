@@ -324,7 +324,7 @@ class Level6 {
             if (this.bellCounter == 50) {
                 this.nightTime.setPosition(this.camera.posX + this.camera.left, this.camera.posY + this.camera.bottom, this.nightTime.position.z);
                 this.nightTime.setFade(0.0);
-                this.showCredits = false; //Set to true to turn on credits
+                this.showCredits = true; //Set to true to turn on credits
                 this.bellCounter++;
             }
             

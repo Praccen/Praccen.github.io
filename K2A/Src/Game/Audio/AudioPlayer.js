@@ -37,8 +37,8 @@ class AudioPlayer {
 	}
     
     playSound(key, loop) {
-        //this.sounds[key].loop = loop;
-        //this.sounds[key].play();
+        this.sounds[key].loop = loop;
+        this.sounds[key].play();
     }
     
     setVolume(key, volume) {
