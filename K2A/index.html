@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="index.css">
+		
+		<!-- Allow fullscreen mode on iOS devices. (These are Apple specific meta tags.) -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="HandheldFriendly" content="true" />
+	
+		<!-- Chrome for Android web app tags -->
+		<meta name="mobile-web-app-capable" content="yes" />
+	</head>
+	
+	<body>
+		<canvas id="gameCanvas" width="1920" height="1080"></canvas>
+	</body>
+
+	<!-- vertex shader -->
+	<script id="vertex-shader" type="x-shader/x-vertex">
+
+	attribute vec2 a_Position;
+	attribute vec2 a_UV;
+	uniform mat4 u_World;
+	uniform mat4 u_ViewProj;
+	
+	varying vec2 v_UV;
+
+	void main() {
+		vec4 tempPos = vec4(a_Position.x, a_Position.y, 0, 1);
+		gl_Position = u_ViewProj * u_World * tempPos;
+		v_UV = a_UV;
+	}
+
+	</script>
+
+
+
+	<!-- fragment shader -->
+	<script id="fragment-shader" type="x-shader/x-fragment">
+
+	precision mediump float;
+
+	varying vec2 v_UV;
+	
+	uniform sampler2D u_texture;
+	uniform float u_fade;
+
+	void main() {
+		vec4 tempColor = texture2D(u_texture, v_UV);
+		tempColor.w = tempColor.w * u_fade;
+		gl_FragColor = tempColor;
+	}
+
+	</script>
+	
+	<!-- Libs -->
+	<script type="text/javascript" src="Libs/webgl-utils.js"></script>
+	<script type="text/javascript" src="Libs/cuon-matrix.js"></script>
+	
+	<!-- Code -->
+	<script type="text/javascript" src="Src/Game/Input.js"></script>
+	<script type="text/javascript" src="Src/Game/Levels/Level1.js"></script>
+	<script type="text/javascript" src="Src/Game/Levels/Level2.js"></script>
+	<script type="text/javascript" src="Src/Game/Levels/Level3.js"></script>
+	<script type="text/javascript" src="Src/Game/Levels/Level4.js"></script>
+	<script type="text/javascript" src="Src/Game/Levels/Level5.js"></script>
+	<script type="text/javascript" src="Src/Game/Levels/Level6.js"></script>
+	<script type="text/javascript" src="Src/Game/TransitionHandler.js"></script>
+	<script type="text/javascript" src="Src/Game/Objects/GameObject.js"></script>
+	<script type="text/javascript" src="Src/Game/Graphics/Particles.js"></script>
+	<script type="text/javascript" src="Src/Game/Objects/Character.js"></script>
+	<script type="text/javascript" src="Src/Game/Graphics/Camera.js"></script>
+	<script type="text/javascript" src="Src/Game/Physics/Physics.js"></script>
+	<script type="text/javascript" src="Src/Game/Audio/AudioPlayer.js"></script>
+	<script type="text/javascript" src="Src/Game/Game.js"></script>
+	<script type="text/javascript" src="Src/main.js"></script>
+</html>
