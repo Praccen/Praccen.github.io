@@ -10,8 +10,10 @@ Splash is a ray traced online first person shooter. The story is that a scientis
 frameborder="0" allowfullscreen class="video"></iframe>
 </div>
 
+
 # Scuffed Newton
 Text
+
 
 # SPASM
 Text
@@ -20,6 +22,7 @@ Text
 <iframe src="https://www.youtube.com/embed/ansdNcRM_0Q"
 frameborder="0" allowfullscreen class="video"></iframe>
 </div>
+
 
 # K2A Web based game
 Written in HTML, CSS, and Javascript with webgl as a freelance project ordered by the PR-agency [Redgert Comms](http://redgertcomms.com/ "Redgert Comms homepage") as a way to market the stock exchange listing of the company [K2A](https://www.k2a.se "K2A homepage").
