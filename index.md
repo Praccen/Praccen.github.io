@@ -1,4 +1,4 @@
-Hello and welcome to my portfolio website. My name is Gustav Björk. I am currently on the last semester of my master of science program in game and software engineering at Blekinge Tekniska Högskola (BTH). I am passionate about game development and have an especially big interest in game physics.
+Welcome to my portfolio website! My name is Gustav and I am currently on the last semester of my master of science program in game and software engineering at Blekinge Tekniska Högskola (BTH). I am passionate about game development and have an especially big interest in game physics.
 
 ### I program games and stuff, here they are: 
 
