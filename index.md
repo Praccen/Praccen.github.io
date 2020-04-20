@@ -1,8 +1,9 @@
 Welcome to my portfolio website! My name is Gustav and I am currently on the last semester of my master of science program in game and software engineering at Blekinge Tekniska Högskola (BTH). I am passionate about game development and have an especially big interest in game physics.
 
-# I program games and stuff, here are some of my projects: 
+# I program games and stuff, 
+# here are some of my projects: 
 
-## S.P.L.A.S.H2O
+### S.P.L.A.S.H2O
 Splash is a ray traced online first person shooter. The story is that a scientist has cloned himself in order to have someone to play games with. He then proceeds to turn off all the lights in his laboratory and give all his clones some candles and a water gun each. What happens next is a last man standing water fight where the goal is to eliminate other players by extinguishing their candles. The game can be played online with up to 12 players in the same game.
 
 We were 12 students working together during the large game project at BTH. I created the physics including collisions, raycasting, bounding boxes, octree as well as the particle effects framework/back end and frustum culling.
