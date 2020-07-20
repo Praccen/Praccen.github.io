@@ -4,6 +4,7 @@ Welcome to my portfolio website! My name is Gustav and I recently finished my ma
 # - Here are some of my projects: 
 <br/>
 ### S.P.L.A.S.H2O
+<p align="center"><img src="https://raw.githubusercontent.com/BTH-StoraSpel-DXR/SPLASH/master/GitHubMedia/splash_logo.png" alt="SPLASH20 logo"></p>
 Splash is a ray-traced online first-person shooter. The story is that a scientist has cloned himself in order to have someone to play games with. He then proceeds to turn off all the lights in his laboratory and give all his clones some candles and a water gun each. What happens next is a last man standing water fight where the goal is to eliminate other players by extinguishing their candles. The game can be played online with up to 12 players in the same game.
 
 We were 12 students working together during the large game project at BTH. The game is made from scratch and I created the physics including collisions, raycasting, bounding boxes, octree as well as the particle effects framework/back end and frustum culling.
