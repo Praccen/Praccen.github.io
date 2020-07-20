@@ -16,7 +16,7 @@ frameborder="0" allowfullscreen class="video"></iframe>
 </div>
 <br/>
 ### SPASM
-SPASM is a 2,5D arena shooter made by me and 4 other students during the small game project at BTH and is the result of 8 weeks of development from scratch. I contributed with creating models, animations, map building, block aperence and connections, score visualizations, and some varius gameplay related features.
+SPASM is a 2,5D arena shooter made by me and 4 other students during the small game project at BTH and is the result of 8 weeks of development from scratch. I contributed with creating models, animations, map building, block appearance and connections, score visualizations, and some varius gameplay related features.
 
 The repo is available [here](https://github.com/Piratkopia13/DV1504_SPASM "SPASM repo")
 
@@ -38,3 +38,5 @@ Check out my masters thesis which I conducted together with my classmate [Alexan
  
 [Link to publication](http://urn.kb.se/resolve?urn=urn:nbn:se:bth-19623 "DiVa publication")
 <br/>
+### My Github
+[Praccen](https://github.com/Praccen "Github profile")
