@@ -28,6 +28,7 @@ frameborder="0" allowfullscreen class="video"></iframe>
 <br/>
 ## K2A Web based game
 Written in HTML, CSS, and Javascript with WebGL as a freelance project ordered by the PR-agency [Redgert Comms](http://redgertcomms.com/ "Redgert Comms homepage") as a way to market the stock exchange listing of the company [K2A](https://www.k2a.se "K2A homepage").
+
 ![alt-text](./K2A/Assets/Textures/Characters/Johan/Johan_K2A.png "Johan K2A") The game can be played [here!](./K2A "K2A Game")
 <br/>
 ## Scuffed Newton
