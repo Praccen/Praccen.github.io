@@ -1,4 +1,4 @@
-<img align="left" src="./assets/Jag.jpg" width="200" margin-right="10">
+<img align="right" src="./assets/Jag.jpg" width="200">
 Welcome to my portfolio website! My name is Gustav and I recently finished my master of science in engineering degree in game and software engineering at Blekinge Tekniska Högskola (BTH), Sweden. I am passionate about game development and have an especially big interest in game physics.
 
 # I program games and stuff. 
