@@ -28,8 +28,7 @@ frameborder="0" allowfullscreen class="video"></iframe>
 <br/>
 ## K2A Web based game
 Written in HTML, CSS, and Javascript with WebGL as a freelance project ordered by the PR-agency [Redgert Comms](http://redgertcomms.com/ "Redgert Comms homepage") as a way to market the stock exchange listing of the company [K2A](https://www.k2a.se "K2A homepage").
-
-The game can be played [here!](./K2A "K2A Game") ![alt-text](./K2A/Assets/Textures/Characters/Johan/Johan_K2A.png "Johan K2A")
+![alt-text](./K2A/Assets/Textures/Characters/Johan/Johan_K2A.png "Johan K2A") The game can be played [here!](./K2A "K2A Game")
 <br/>
 ## Scuffed Newton
 Scuffed Newton is the start of my own physics engine. It is a continuation of the physics engine I made for SPLASH. Scuffed Newton is compiled as a DLL for easy usage. Support functions are implemented to allow explicit linking. So far Scuffed Newton is mostly a component-based collision engine that uses Separating Axis Theorem to find collisions (including continuous collisions) and provides a very simple collision response. However, most of the detection part is there (like collision manifolds, etc) to start implementing everything needed for dynamic rigid-body collisions.
