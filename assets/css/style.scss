@@ -54,3 +54,8 @@ img[src~="bordered"] {
    margin: 10px;
    border: 1px solid black;
 }
+
+introbox {
+    display: flex;
+    align-items: center;
+}
