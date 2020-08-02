@@ -43,4 +43,5 @@ Check out my masters thesis which I conducted together with my classmate [Alexan
 
 ---
 ## Links
-[GitHub](https://github.com/Praccen "Github profile")   [LinkedIn](https://www.linkedin.com/in/gustav-bj%C3%B6rk-47329a188 "LinkedIn profile")
+[GitHub](https://github.com/Praccen "Github profile")
+[LinkedIn](https://www.linkedin.com/in/gustav-bj%C3%B6rk-47329a188 "LinkedIn profile")
