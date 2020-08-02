@@ -48,6 +48,7 @@ h3 {
 }
 
 img[src~="bordered"] {
+   float: right;
    padding: 2px;
    margin: 10px;
    border: 1px solid black;
