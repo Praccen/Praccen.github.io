@@ -11,7 +11,7 @@ Splash is a ray-traced online first-person shooter. The story is that a scientis
 
 We were 12 students working together during the large game project at BTH. The game is made from scratch and I created the physics including collisions, raycasting, bounding boxes, octree as well as the particle effects framework/back end and frustum culling.
 
-The repo is available [here](https://github.com/BTH-StoraSpel-DXR/SPLASH "SPLASH repo")
+The repo is available [here!](https://github.com/BTH-StoraSpel-DXR/SPLASH "SPLASH repo")
 ![alt-text](https://raw.githubusercontent.com/BTH-StoraSpel-DXR/SPLASH/master/GitHubMedia/splash_logo.png "SPLASH20 logo")
 
 <div class="container">
@@ -22,7 +22,7 @@ frameborder="0" allowfullscreen class="video"></iframe>
 ## SPASM
 SPASM is a 2,5D arena shooter made by me and 4 other students during the small game project at BTH and is the result of 8 weeks of development from scratch. I contributed with creating models, animations, map building, block appearance and connections, score visualizations, and some varius gameplay related features.
 
-The repo is available [here](https://github.com/Piratkopia13/DV1504_SPASM "SPASM repo")
+The repo is available [here!](https://github.com/Piratkopia13/DV1504_SPASM "SPASM repo")
 
 <div class="container">
 <iframe src="https://www.youtube.com/embed/ansdNcRM_0Q"
@@ -37,7 +37,7 @@ Written in HTML, CSS, and Javascript with WebGL as a freelance project ordered b
 ## Scuffed Newton
 Scuffed Newton is the start of my own physics engine. It is a continuation of the physics engine I made for SPLASH. Scuffed Newton is compiled as a DLL for easy usage. Support functions are implemented to allow explicit linking. So far Scuffed Newton is mostly a component-based collision engine that uses Separating Axis Theorem to find collisions (including continuous collisions) and provides a very simple collision response. However, most of the detection part is there (like collision manifolds, etc) to start implementing everything needed for dynamic rigid-body collisions.
 
-The repo is available [here](https://github.com/Praccen/ScuffedNewton "Scuffed Newton repo")
+The repo is available [here!](https://github.com/Praccen/ScuffedNewton "Scuffed Newton repo")
 <br/>
 ## Master thesis on collision detection using neural networks
 Check out my masters thesis which I conducted together with my classmate [Alexander Wester](https://pirat.dev). We experimented with using Neural Networks to detect collisions in 3D environments and comparing it to Separating Axis Theorem.
