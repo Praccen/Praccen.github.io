@@ -48,13 +48,18 @@ h3 {
 }
 
 img[src~="bordered"] {
-   float: right;
    padding: 2px;
    margin: 10px;
    border: 1px solid black;
 }
 
-introbox {
+.introbox {
     display: flex;
     align-items: center;
+}
+
+.column-1,
+.column-2 {
+  float: left;
+  width: 50%;
 }
