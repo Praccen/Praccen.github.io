@@ -32,7 +32,9 @@ Written in HTML, CSS, and Javascript with WebGL as a freelance project ordered b
 The game can be played [here!](./K2A "K2A Game")
 <br/>
 ### Scuffed Newton
-Scuffed Newton is the start of my own physics engine. It is a continuation of the physics engine I made for SPLASH. The physics engine is compiled as a DLL for easy usage. So far it is mostly a component based collision engine that uses Separating Axis Theorem (SAT) to find collisions (including continous collisions) and provides very simple collision response. However, most of the detection part is there (like collision manifolds etc) to start implementing everything needed for dynamic rigidbody collisions. 
+Scuffed Newton is the start of my own physics engine. It is a continuation of the physics engine I made for SPLASH. Scuffed Newton is compiled as a DLL for easy usage. Support functions are implemented to allow explicit linking. So far Scuffed Newton is mostly a component-based collision engine that uses Separating Axis Theorem to find collisions (including continuous collisions) and provides a very simple collision response. However, most of the detection part is there (like collision manifolds, etc) to start implementing everything needed for dynamic rigid-body collisions.
+
+The repo is available [here](https://github.com/Praccen/ScuffedNewton "Scuffed Newton repo")
 <br/>
 ### Master thesis on collision detection using neural networks
 Check out my masters thesis which I conducted together with my classmate [Alexander Wester](https://pirat.dev). We experimented with using Neural Networks to detect collisions in 3D environments and comparing it to Separating Axis Theorem.
