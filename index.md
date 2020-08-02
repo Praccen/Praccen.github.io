@@ -42,6 +42,7 @@ Check out my masters thesis which I conducted together with my classmate [Alexan
  
 [Link to publication](http://urn.kb.se/resolve?urn=urn:nbn:se:bth-19623 "DiVa publication")
 <br/>
+#
 ------
 ## My Github
 [Praccen](https://github.com/Praccen "Github profile")
