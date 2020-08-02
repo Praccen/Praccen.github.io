@@ -40,3 +40,7 @@ h2 {
 h3 {
     color: #6d6d6d;
 }
+
+img[src~="bordered"] {
+   border: 1px solid black;
+}
