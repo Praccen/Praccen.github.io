@@ -1,6 +1,6 @@
 <div class="introbox">
-<div class="column-1"><span>Welcome to my portfolio website! My name is Gustav and I recently (June 2020) finished my master of science in engineering degree in game and software engineering at Blekinge Tekniska Högskola (BTH), Sweden. I am passionate about game development and have an especially big interest in game physics.</span></div>
-<div class="column-2"><img src="./assets/Jag.jpg# bordered" width="250"></div>
+<div class="column-1"><img src="./assets/Jag.jpg# bordered" width="250"></div>
+<div class="column-2"><span>Welcome to my portfolio website! My name is Gustav and I recently (June 2020) finished my master of science in engineering degree in game and software engineering at Blekinge Tekniska Högskola (BTH), Sweden. I am passionate about game development and have an especially big interest in game physics.</span></div>
 </div>
 # I program games and stuff. 
 # - Here are some of my projects: 
