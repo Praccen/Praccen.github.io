@@ -27,6 +27,11 @@ The repo is available [here!](https://github.com/Piratkopia13/DV1504_SPASM "SPAS
 <iframe src="https://www.youtube.com/embed/ansdNcRM_0Q"
 frameborder="0" allowfullscreen class="video"></iframe>
 </div>
+
+SPASM has been showcased by BTH at multiple events such as Comic Con Stockholm where the game was very appreciated. So much so that we have been recommended by BTH representatives to release the game on platforms like steam. Hopefully, we can get the time to do this soon.
+<img src="./assets/SPASM_Showcased_1.jpg" width ="50%">
+<img src="./assets/SPASM_Showcased_2.jpg" width ="50%">
+
 <br/>
 ## K2A Web based game
 Written in HTML, CSS, and Javascript with WebGL as a freelance project ordered by the PR-agency [Redgert Comms](http://redgertcomms.com/ "Redgert Comms homepage") as a way to market the stock exchange listing of the company [K2A](https://www.k2a.se "K2A homepage").
