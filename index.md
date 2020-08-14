@@ -29,8 +29,9 @@ frameborder="0" allowfullscreen class="video"></iframe>
 </div>
 
 SPASM has been showcased by BTH at multiple events such as Comic Con Stockholm where the game was very appreciated. So much so that we have been recommended by BTH representatives to release the game on platforms like steam. Hopefully, we can get the time to do this soon.
-<img src="./assets/SPASM_Showcased_1.jpg" width ="50%">
-<img src="./assets/SPASM_Showcased_2.jpg" width ="50%">
+
+<img src="./assets/SPASM_Showcased_1.jpg" width ="40%">
+<img src="./assets/SPASM_Showcased_2.jpg" width ="40%">
 
 <br/>
 ## K2A Web based game
