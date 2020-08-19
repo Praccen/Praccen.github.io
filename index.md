@@ -34,7 +34,7 @@ SPASM has been showcased by BTH at multiple events such as Comic Con Stockholm w
 <img src="./assets/SPASM_Showcased_2.jpg" width ="40%">
 
 <br/>
-## K2A Web based game
+## K2A web-based game
 Written in HTML, CSS, and Javascript with WebGL as a freelance project ordered by the PR-agency [Redgert Comms](http://redgertcomms.com/ "Redgert Comms homepage") as a way to market the stock exchange listing of the company [K2A](https://www.k2a.se "K2A homepage").
 
 ![alt-text](./K2A/Assets/Textures/Characters/Johan/Johan_K2A.png "Johan K2A") The game can be played [here!](./K2A "K2A Game")
@@ -45,7 +45,7 @@ Scuffed Newton is the start of my own physics engine. It is a continuation of th
 The repo is available [here!](https://github.com/Praccen/ScuffedNewton "Scuffed Newton repo")
 <br/>
 ## Master thesis on collision detection using neural networks
-Check out my masters thesis which I conducted together with my classmate [Alexander Wester](https://pirat.dev). We experimented with using Neural Networks to detect collisions in 3D environments and comparing it to Separating Axis Theorem.
+Check out my masters thesis which I conducted together with my classmate [Alexander Wester](https://pirat.dev). We experimented with using Neural Networks to detect collisions in 3D environments and comparing it to Separating Axis Theorem. We were able to achieve intersection testing 15.6 times as fast as when using Separating Axis Theorem.
  
 [Link to publication](http://urn.kb.se/resolve?urn=urn:nbn:se:bth-19623 "DiVa publication")
 <br/>
