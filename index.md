@@ -56,4 +56,4 @@ Check out my masters thesis which I conducted together with my classmate [Alexan
 
 [LinkedIn](https://www.linkedin.com/in/gustav-bj%C3%B6rk-47329a188 "LinkedIn profile")
 
-[CV]({{file name='assets/CV_Gustav_Björk.pdf'}})
+[CV]({{file name='./assets/CV_Gustav_Björk.pdf'}})
