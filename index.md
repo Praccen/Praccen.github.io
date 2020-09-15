@@ -28,8 +28,7 @@ The repo is available [here!](https://github.com/Piratkopia13/DV1504_SPASM "SPAS
 frameborder="0" allowfullscreen class="video"></iframe>
 </div>
 <br/>
-SPASM has been showcased by BTH at multiple events such as Comic Con Stockholm where the game was very appreciated. So much so that we have been recommended by BTH representatives to release the game on a platform like Steam. Hopefully, we can get the time to do this soon.
-
+SPASM has been showcased by BTH at multiple events such as Comic Con Stockholm where the game was very appreciated. So much so that we have been recommended by BTH representatives to release the game on a platform like Steam. Therefore, we are currently working on an updated version in Unity, that will include online multiplayer and more content, set to release on both mobile and Windows.
 <img src="./assets/SPASM_Showcased_1.jpg" width ="40%">
 <img src="./assets/SPASM_Showcased_2.jpg" width ="40%">
 
