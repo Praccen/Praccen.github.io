@@ -1,0 +1,70 @@
+body {
+	margin: 0 auto;
+	background-color: #FDFEFE;
+	font-family: "Courier New", Courier, monospace;
+	max-width: 1000px;
+}
+
+.header {
+	position:fixed;
+	top: 0;
+	max-width: 1000px;
+	width: 100%;
+	overflow: hidden;
+	height: 140px;
+	text-align: center;
+}
+
+.background-block {
+	position:fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	height: 140px;
+	background-color: #FDFEFE;
+	
+	/* IE */
+	filter: alpha(opacity=80);
+	/* Mozilla */
+	-moz-opacity: 0.8;
+	/* CSS3 */
+	opacity: 0.8;
+}
+
+.header a {
+	padding: 0% 5%;
+	white-space: nowrap;
+	transition: 0.4s;
+}
+
+.header a:link {
+	text-decoration: None;
+	color: black;
+}
+.header a:visited {
+	color: black;
+}
+.header a:hover {
+	color: white;
+	background-color: #b9bcbd;
+}
+
+.content {
+	margin: auto;
+	margin-top: 140px;
+	overflow-x: hidden;
+}
+
+img {
+	width: 100%;
+}
+
+h1 {
+	padding: 0px 20px;
+}
+
+p {
+	padding: 0px 20px;
+	color: black;
+}
