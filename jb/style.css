@@ -1,6 +1,6 @@
 body {
 	margin: 0 auto;
-	background-color: #FDFEFE;
+	background-color: #ede6da;
 	font-family: "Courier New", Courier, monospace;
 	max-width: 1000px;
 }
@@ -8,7 +8,7 @@ body {
 .header {
 	position:fixed;
 	top: 0;
-	max-width: 1000px;
+	max-width: inherit;
 	width: 100%;
 	overflow: hidden;
 	height: 140px;
@@ -22,7 +22,7 @@ body {
 	width: 100%;
 	overflow: hidden;
 	height: 140px;
-	background-color: #FDFEFE;
+	background-color: #ede6da;
 	
 	/* IE */
 	filter: alpha(opacity=80);
@@ -46,8 +46,13 @@ body {
 	color: black;
 }
 .header a:hover {
-	color: white;
-	background-color: #b9bcbd;
+	color: #E6D9C6;
+	background-color: #919e93;
+}
+
+.header h1 {
+	color: #758077;
+	margin-top: 30px;
 }
 
 .content {
@@ -61,6 +66,7 @@ img {
 }
 
 h1 {
+	margin-top: 5px;
 	padding: 0px 20px;
 }
 
