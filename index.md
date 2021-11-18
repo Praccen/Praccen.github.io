@@ -32,7 +32,7 @@ SPASM has been showcased by BTH at multiple events such as Comic Con Stockholm w
 <img src="./assets/SPASM_Showcased_2.jpg" width ="40%">
 <br/>
 ## Ludum Dare 49 - Un-stabled
-I was in Ludum Dare 49! The theme was "Unstable" and we went the punny way by making a game about getting out of the stable as a horse. Doing a game jam was super fun and I definitely want to do more of them!
+I participated in Ludum Dare 49! The theme was "Unstable" and we went the punny way by making a game about getting out of the stable as a horse. Doing a game jam was super fun and I definitely want to do more of them!
 
 Check the entry out [here!](https://ldjam.com/events/ludum-dare/49/un-stabled-5)
 
