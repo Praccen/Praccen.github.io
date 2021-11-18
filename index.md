@@ -29,8 +29,11 @@ frameborder="0" allowfullscreen class="video"></iframe>
 SPASM has been showcased by BTH at multiple events such as Comic Con Stockholm where the game was very appreciated. So much so that we have been recommended by BTH representatives to release the game on a platform like Steam. Therefore, we are currently working on an updated version in Unity, that will include online multiplayer and more content, set to release on both mobile and Windows.<br/>
 <img src="./assets/SPASM_Showcased_1.jpg" width ="40%">
 <img src="./assets/SPASM_Showcased_2.jpg" width ="40%">
-
 <br/>
+## Ludum Dare 49 - Un-stabled
+I was in Ludum Dare 49! The theme was "Unstable" and we went the punny way by making a game about getting out of the stable as a horse. Doing a game jam was super fun and I definitely want to do more of them!
+Check the entry out [here!](https://ldjam.com/events/ludum-dare/49/un-stabled-5)
+<img src="https://static.jam.vg/raw/fd1/f3/z/45fee.png">
 ## K2A web-based game
 Written in HTML, CSS, and Javascript with WebGL as a freelance project ordered by the PR-agency [Redgert Comms](http://redgertcomms.com/ "Redgert Comms homepage") as a way to market the stock exchange listing of the company [K2A](https://www.k2a.se "K2A homepage").
 
@@ -50,6 +53,8 @@ Check out my masters thesis which I conducted together with my classmate [Alexan
 ---
 ## Links
 [GitHub](https://github.com/Praccen "Github profile")
+
+[Ludum Dare Profile]("https://ldjam.com/users/praccen "LD profile")
 
 [LinkedIn](https://www.linkedin.com/in/gustav-bj%C3%B6rk-47329a188 "LinkedIn profile")
 
