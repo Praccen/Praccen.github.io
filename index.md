@@ -37,6 +37,14 @@ I participated in Ludum Dare 49! The theme was "Unstable" and we went the punny 
 Check the entry out [here!](https://ldjam.com/events/ludum-dare/49/un-stabled-5)
 
 <img src="https://static.jam.vg/raw/fd1/f3/z/45fee.png">
+
+## Ludum Dare 50 - Mr. Fuse
+For Ludum Dare 50, I ported the simple 2D engine we used for LD49 to typescript and WebGL. We made a foddian escort platformer where you move up a tower while bouncing a bomb, it's hard, but fun!
+
+Check out the entry [here](https://ldjam.com/events/ludum-dare/50/mr-fuse) or play the game directly [here!](https://bjorkgustav.se/MrFuse/) (There are even touch controls so feel free to try it on your phone!)
+
+<img src="https://static.jam.vg/raw/b7f/f3/z/4b35f.png">
+
 ## K2A web-based game
 Written in HTML, CSS, and Javascript with WebGL as a freelance project ordered by the PR-agency [Redgert Comms](http://redgertcomms.com/ "Redgert Comms homepage") as a way to market the stock exchange listing of the company [K2A](https://www.k2a.se "K2A homepage").
 
