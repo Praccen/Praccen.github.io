@@ -16,8 +16,7 @@ The repo is available [here!](https://github.com/BTH-StoraSpel-DXR/SPLASH "SPLAS
 <div class="container">
 <iframe src="https://www.youtube.com/embed/NXo2Lea5HGo" 
 frameborder="0" allowfullscreen class="video"></iframe>
-</div>  
-  
+</div></br>
 
 ## SPASM
 SPASM is a 2,5D arena shooter made by me and 4 other students during the small game project at BTH and is the result of 8 weeks of development from scratch. I contributed with creating models, animations, map building, block appearance and connections, score visualizations, and some varius gameplay related features.
