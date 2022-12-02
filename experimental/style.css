@@ -1,0 +1,99 @@
+body {
+	margin: 0 auto;
+	background-color: #ede6da;
+	font-family: "Courier New", Courier, monospace;
+	max-width: 1000px;
+}
+
+.header {
+	position:fixed;
+	top: 0;
+	max-width: inherit;
+	width: 100%;
+	overflow: hidden;
+	height: 140px;
+	text-align: center;
+}
+
+.background-block {
+	position:fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	height: 140px;
+	background-color: #ede6da;
+	
+	/* IE */
+	filter: alpha(opacity=80);
+	/* Mozilla */
+	-moz-opacity: 0.8;
+	/* CSS3 */
+	opacity: 0.8;
+}
+
+.header a {
+	padding: 0% 5%;
+	white-space: nowrap;
+	transition: 0.4s;
+	font-size: 20px;
+}
+
+.header a:link {
+	text-decoration: None;
+	color: black;
+}
+.header a:visited {
+	color: black;
+}
+
+a {
+	color: #919e93;
+}
+
+a:hover {
+	color: #E6D9C6;
+	background-color: #919e93;
+}
+
+.header h1 {
+	color: #758077;
+	margin-top: 30px;
+}
+
+.content {
+	margin: auto;
+	margin-top: 140px;
+	overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	margin: 0px 20px;
+}
+
+img {
+	width: 100%;
+	margin: 0px 20px;
+}
+
+h1 {
+	margin-top: 5px;
+	padding: 0px 20px;
+}
+
+p {
+	padding: 0px 20px;
+	color: black;
+	font-size: 18px;
+}
