@@ -1,5 +1,3 @@
-const heightByWidth = 9 / 16;
-const widthByHeight = 16 / 9;
 let guicontainer = document.getElementById("guicontainer");
 
 function resize() {
