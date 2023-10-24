@@ -9,35 +9,36 @@ function resize() {
 		height: window.innerHeight - 20,
 	};
 
-	let newGameHeight;
-	let newGameWidth;
-
-	// Determine game size
-	if (heightByWidth > innerWindowSize.height / innerWindowSize.width) {
-		newGameHeight = innerWindowSize.height;
-		newGameWidth = newGameHeight * widthByHeight;
-	} else {
-		newGameWidth = innerWindowSize.width;
-		newGameHeight = newGameWidth * heightByWidth;
-	}
-
-	let newGameX = (innerWindowSize.width - newGameWidth) / 2;
-	let newGameY = (innerWindowSize.height - newGameHeight) / 2;
-
-	// Center the game by setting the padding of the game
-	guicontainer.style.padding = newGameY + "px " + newGameX + "px";
-
 	// Resize game
-	guicontainer.style.width = newGameWidth + "px";
-	guicontainer.style.height = newGameHeight + "px";
+	guicontainer.style.width = innerWindowSize.width + "px";
+	guicontainer.style.height = innerWindowSize.height + "px";
 }
 
-let urls = [
-    // Select imposter or not
-    //SHHH
-    // Correct result
-    // Incorrect result
-]
+function transition(from, to) {
+	document.getElementById(from).style.height = "0%";
+	document.getElementById(from).style.visibility = "hidden";
+	document.getElementById(to).style.height = "100%";
+	document.getElementById(to).style.visibility = "visible";
+}
+
+function addButtonClickEvent(buttonId, func) {
+	let button = document.getElementById(buttonId);
+    button.addEventListener("click", func);
+}
+
+function fullscreenTransitionEvent(from, to) {
+	guicontainer.requestFullscreen();
+	transition(from, to);
+}
+
+function rollImpostor() {
+	if (Math.random() > 0.5) {
+		fullscreenTransitionEvent("voting", "wasImpostor");
+	}
+	else {
+		fullscreenTransitionEvent("voting", "wasNotImpostor");
+	}
+}
 
 /* main */
 window.onload = (function () {
@@ -47,27 +48,56 @@ window.onload = (function () {
 	window.addEventListener("resize", function () {
 		resize();
 	});
+	
+	let voted;
 
-    let yesBtn = document.getElementById("voteYes");
-    yesBtn.addEventListener("click", (function (e) {
-        guicontainer.requestFullscreen();
-        document.getElementById("stage0").style.height = "0%";
-        document.getElementById("stage1").style.height = "100%";
-    }));
+	addButtonClickEvent("visorBtn", function() {
+		fullscreenTransitionEvent("visor", "shh");
+	});
 
-    let noBtn = document.getElementById("voteNo");
-    noBtn.addEventListener("click", (function (e) {
-        guicontainer.requestFullscreen();
-        document.getElementById("stage0").style.height = "0%";
-        document.getElementById("stage1").style.height = "100%";
-    }));
-    
-    let shhButton = document.getElementById("shh");
-    shhButton.addEventListener("click", (function (e) {
-        guicontainer.requestFullscreen();
+	addButtonClickEvent("shhBtn", function() {
+		fullscreenTransitionEvent("shh", "halloweener");
+	});
+	
+	addButtonClickEvent("halloweenerBtn", function() {
+		fullscreenTransitionEvent("halloweener", "voting");
+	});
 
-    }));
+	addButtonClickEvent("yesBtn", function() {
+		voted = true;
+		rollImpostor();
+	});
 
+	addButtonClickEvent("noBtn", function() {
+		voted = false;
+		rollImpostor();
+	});
+
+	addButtonClickEvent("wasImpostorBtn", function() {
+		if (voted) {
+			fullscreenTransitionEvent("wasImpostor", "correct");
+		}
+		else {
+			fullscreenTransitionEvent("wasImpostor", "incorrect");
+		}
+	});
+
+	addButtonClickEvent("wasNotImpostorBtn", function() {
+		if (voted) {
+			fullscreenTransitionEvent("wasNotImpostor", "incorrect");
+		}
+		else {
+			fullscreenTransitionEvent("wasNotImpostor", "correct");
+		}
+	});
+
+	addButtonClickEvent("correctBtn", function() {
+		fullscreenTransitionEvent("correct", "visor");
+	});
+
+	addButtonClickEvent("incorrectBtn", function() {
+		fullscreenTransitionEvent("incorrect", "visor");
+	});
 
     resize();
 }());

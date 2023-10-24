@@ -4,6 +4,24 @@ guicontainer {
     overflow: hidden;
 }
 
+.votingButton {
+    height: 100%;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    color: white;
+
+    image-rendering: optimizeSpeed;             /* Older versions of FF          */
+    image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+    image-rendering: -webkit-optimize-contrast; /* Safari                        */
+    image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+    image-rendering: pixelated;                 /* Awesome future-browsers       */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE                            */
+}
+
+
 .backgroundButton {
     width: 100%;
     height: 100%;
@@ -14,4 +32,16 @@ guicontainer {
     border: none;
     padding: 0;
     margin: 0;
+    color: white;
+}
+
+div {
+    width: 100%;
+    height: 0%;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    position: relative;
 }

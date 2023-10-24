@@ -17,13 +17,34 @@
 
 	<body>
         <div id="guicontainer">
-            <div id="stage0" style="width: 100%; height: 100%;">
-                <button class="backgroundButton" id="voteYes" style="width: 49%; height: 100%; background-image: url(Assets/greenCheckMark.png);"></button>
-                <button class="backgroundButton" id="voteNo" style="width: 49%; height: 100%; background-image: url(Assets/redCheckMark.png);"></button>
+			<!-- Visor -> Shh -> Halloweener -> impostor? vote -> Spinning in space -> Result (don't know what it should look like)-->
+
+			<div id="visor" style="height: 100%;">
+				<button class="backgroundButton" id="visorBtn" style="background-image: url(Assets/visor.webp)"></button>
+			</div>
+			<div id="shh">
+                <button class="backgroundButton" id="shhBtn" style="background-image: url(https://media.tenor.com/qCqLC7df-eIAAAAC/among-us-shhhhhhh.gif)"></button> <!-- https://penmenpress.com/wp-content/uploads/2020/10/Em4GGkyXMAkihHQ.jpg -->
             </div>
-            <div id="stage1" style="width: 100%; height: 0%;">
-                <button class="backgroundButton" id="shh" style="background-image: url(https://penmenpress.com/wp-content/uploads/2020/10/Em4GGkyXMAkihHQ.jpg)";></button>
+			<div id="halloweener">
+				<button class="backgroundButton" id="halloweenerBtn" style="background-image: url(Assets/Halloweener.png)"></button>
+			</div>
+            <div id="voting" style="background-image: url(Assets/ImpostorQuestion.png);">
+                <button class="votingButton" id="yesBtn" style="width: 10%; position: absolute; left: 15%; background-image: url(Assets/VoteYes.png);"></button>
+                <button class="votingButton" id="noBtn" style="width: 10%; position: absolute; left: 75%; background-image: url(Assets/VoteNo.png);"></button>
             </div>
+			<div id="wasImpostor" >
+				<button class="backgroundButton" id="wasImpostorBtn" style="background-image: url(Assets/WasImpostor.png)"></button>
+			</div>;
+			<div id="wasNotImpostor">
+				<button class="backgroundButton" id="wasNotImpostorBtn" style="background-image: url(Assets/WasNotImpostor.png)"></button>
+			</div>;
+
+			<div id="correct">
+				<button class="backgroundButton" id="correctBtn" style="background-image: url(Assets/Victory.png);"></button>
+			</div>
+			<div id="incorrect">
+				<button class="backgroundButton" id="incorrectBtn" style="background-image: url(Assets/Defeat.png);"></button>
+			</div>
         </div>
 	</body>
 
