@@ -6,6 +6,8 @@ guicontainer {
 
 .votingButton {
     height: 100%;
+    width: 10%;
+    position: absolute;
     background-color: transparent;
     background-size: contain;
     background-repeat: no-repeat;
