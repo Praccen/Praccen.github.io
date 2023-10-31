@@ -97,3 +97,8 @@ p {
 	color: black;
 	font-size: 18px;
 }
+
+hr {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
