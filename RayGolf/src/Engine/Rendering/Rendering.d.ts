@@ -1,0 +1,40 @@
+import TextureStore from "../AssetHandling/TextureStore";
+import Camera from "../Objects/Camera";
+import Scene from "./Scene";
+export default class Rendering {
+    camera: Camera;
+    clearColour: {
+        r: number;
+        g: number;
+        b: number;
+        a: number;
+    };
+    screenCaptureNextFrame: boolean;
+    useCrt: boolean;
+    useBloom: boolean;
+    private textureStore;
+    private resolutionWidth;
+    private resolutionHeight;
+    private directionalShadowRenderPass;
+    private pointShadowRenderPass;
+    private geometryRenderPass;
+    private lightingRenderPass;
+    private particleFramebuffer;
+    private particleRenderPass;
+    private useSkybox;
+    private skyboxRenderPass;
+    private volumetricGodRayPass;
+    private crtFramebuffer;
+    private crtRenderPass;
+    private bloomExtractionInputFramebuffer;
+    private bloomRenderPass;
+    private finishedFramebuffer;
+    private finishedOutputRenderPass;
+    scene: Scene;
+    constructor(textureStore: TextureStore, scene: Scene);
+    initGL(): void;
+    reportCanvasResize(x: number, y: number): void;
+    setSkybox(path: string): void;
+    private takeScreenshot;
+    draw(saveScreenshot?: boolean, screenshotName?: string): void;
+}

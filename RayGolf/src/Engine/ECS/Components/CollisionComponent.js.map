@@ -1,0 +1,1 @@
+{"version":3,"file":"CollisionComponent.js","sourceRoot":"","sources":["../../../../../code/src/Engine/ECS/Components/CollisionComponent.ts"],"names":[],"mappings":";;AAAA,2CAA2D;AAE3D,MAAqB,kBAAmB,SAAQ,qBAAS;IAIxD;QACC,KAAK,CAAC,6BAAiB,CAAC,SAAS,CAAC,CAAC;QACnC,IAAI,CAAC,QAAQ,GAAG,KAAK,CAAC;QACtB,IAAI,CAAC,WAAW,GAAG,KAAK,CAAC;IAC1B,CAAC;CACD;AATD,qCASC"}

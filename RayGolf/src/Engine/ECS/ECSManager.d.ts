@@ -1,0 +1,30 @@
+import System from "./Systems/System";
+import Rendering from "../Rendering/Rendering";
+import Entity from "./Entity";
+import { Component, ComponentTypeEnum } from "./Components/Component";
+import Camera from "../Objects/Camera";
+export default class ECSManager {
+    private systems;
+    private entityCounter;
+    entities: Array<Entity>;
+    private entityAdditionQueue;
+    private entityDeletionQueue;
+    private componentAdditionQueue;
+    private componentRemovalQueue;
+    camera: Camera;
+    rendering: Rendering;
+    constructor(rendering: Rendering);
+    initializeSystems(): void;
+    update(dt: number): void;
+    updateRenderingSystems(dt: number, updateCameraFocus?: boolean): void;
+    createEntity(): Entity;
+    addComponent(entity: Entity, component: Component): void;
+    removeEntity(entityID: number): void;
+    removeComponent(entity: Entity, componentType: ComponentTypeEnum): void;
+    getEntity(entityID: number): Entity;
+    getSystem(type: string): System;
+    private addQueuedEntities;
+    private addQueuedComponents;
+    private removeEntitiesMarkedForDeletion;
+    private removeComponents;
+}

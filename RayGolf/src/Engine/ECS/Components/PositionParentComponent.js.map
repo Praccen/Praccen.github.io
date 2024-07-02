@@ -1,0 +1,1 @@
+{"version":3,"file":"PositionParentComponent.js","sourceRoot":"","sources":["../../../../../code/src/Engine/ECS/Components/PositionParentComponent.ts"],"names":[],"mappings":";;AAAA,2CAAgD;AAChD,2DAAoD;AAEpD,MAAqB,uBAAwB,SAAQ,2BAAiB;IACrE;QACC,KAAK,CAAC,6BAAiB,CAAC,cAAc,CAAC,CAAC;IACzC,CAAC;CACD;AAJD,0CAIC"}

@@ -1,0 +1,32 @@
+import { ReadonlyVec3, mat4, vec3 } from "gl-matrix";
+export default class Camera {
+    private pos;
+    private dir;
+    private up;
+    private fov;
+    private ratio;
+    private farPlaneDistance;
+    private viewMatrixNeedsUpdate;
+    private projMatrixNeedsUpdate;
+    private viewMatrix;
+    private projectionMatrix;
+    private viewProjMatrix;
+    constructor();
+    getViewProjMatrix(): mat4;
+    getViewMatrix(): mat4;
+    getProjectionMatrix(): mat4;
+    getPosition(): vec3;
+    getDir(): ReadonlyVec3;
+    getRight(): vec3;
+    setPosition(pos: ReadonlyVec3): void;
+    translate(translation: ReadonlyVec3): void;
+    setDir(dir: vec3): void;
+    setUp(up: vec3): void;
+    setPitchJawDegrees(pitch: number, jaw: number): void;
+    setPitchJawRadians(pitch: number, jaw: number): void;
+    setFOV(fov: number): void;
+    setAspectRatio(ratio: number): void;
+    setFarPlaneDistance(distance: number): void;
+    private updateViewProjMatrix;
+    bindViewProjMatrix(uniformLocation: WebGLUniformLocation, skybox?: boolean): void;
+}

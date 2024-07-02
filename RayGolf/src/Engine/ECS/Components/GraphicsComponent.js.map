@@ -1,0 +1,1 @@
+{"version":3,"file":"GraphicsComponent.js","sourceRoot":"","sources":["../../../../../code/src/Engine/ECS/Components/GraphicsComponent.ts"],"names":[],"mappings":";;AACA,2CAA2D;AAE3D,MAAqB,iBAAkB,SAAQ,qBAAS;IAGvD,YAAY,MAAsB;QACjC,KAAK,CAAC,6BAAiB,CAAC,QAAQ,CAAC,CAAC;QAClC,IAAI,CAAC,MAAM,GAAG,MAAM,CAAC;IACtB,CAAC;CACD;AAPD,oCAOC"}
