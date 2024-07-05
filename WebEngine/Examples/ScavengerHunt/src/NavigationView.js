@@ -40,23 +40,25 @@ export class NavigationView {
         this.distanceText.position[0] = 0.5;
         this.distanceText.position[1] = 0.5;
         this.distanceText.center = true;
+
+        this.watchId = null;
+
+        if (navigator.geolocation) {
+            let self = this;
+            this.watchId = navigator.geolocation.watchPosition(function(position) {
+                // Slussenfärjan 59.3226291,18.0725482
+                self.distance = Math.ceil(getDistanceFromLatLonInKm(60.1429766,15.4110426, position.coords.latitude, position.coords.longitude) * 1000);
+            }, null, {maximumAge: 0, timeout: 2000, enableHighAccuracy: true} );
+        }
     }
 
     update(dt) {
         this.timer -= dt;
 
-        if (navigator.geolocation) {
-            let self = this;
-            navigator.geolocation.getCurrentPosition(function(position) {
-                // Slussenfärjan 59.3226291,18.0725482
-                self.distance = getDistanceFromLatLonInKm(59.3226291,18.0725482, position.coords.latitude, position.coords.longitude);
-            });
-        }
-
         this.timerText.textString = Math.ceil(this.timer).toString() + " seconds left of navigation";
 
         this.distanceText.textString = 
-        `Distance to goal (km)
+        `Distance to goal (m)
 
         ` + this.distance.toString();
 
@@ -64,6 +66,9 @@ export class NavigationView {
             this.div.remove();
             mainMenuDiv.setHidden(false);
             navigationTimer.time = 0.0;
+            if (navigator.geolocation && this.watchId != undefined) {
+                navigator.geolocation.clearWatch(this.watchId);
+            }
         }
     }
 }

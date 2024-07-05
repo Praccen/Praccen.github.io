@@ -18,7 +18,7 @@ missions.createGui(mainMenuDiv);
 
 let navigationView = null;
 
-export let navigationTimer = {time: 20.0};
+export let navigationTimer = {time: 40.0};
 
 /**
  * Our update function, this will run every frame, and is responsible for moving the camera based on input.
