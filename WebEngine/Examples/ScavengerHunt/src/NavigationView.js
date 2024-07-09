@@ -46,8 +46,7 @@ export class NavigationView {
         if (navigator.geolocation) {
             let self = this;
             this.watchId = navigator.geolocation.watchPosition(function(position) {
-                // Slussenfärjan 59.3226291,18.0725482
-                self.distance = Math.ceil(getDistanceFromLatLonInKm(60.1429766,15.4110426, position.coords.latitude, position.coords.longitude) * 1000);
+                self.distance = Math.ceil(getDistanceFromLatLonInKm(59.3218557,18.0746233, position.coords.latitude, position.coords.longitude) * 1000);
             }, null, {maximumAge: 0, timeout: 2000, enableHighAccuracy: true} );
         }
     }

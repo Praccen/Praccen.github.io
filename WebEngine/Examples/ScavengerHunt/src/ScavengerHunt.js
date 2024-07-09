@@ -18,7 +18,7 @@ missions.createGui(mainMenuDiv);
 
 let navigationView = null;
 
-export let navigationTimer = {time: 40.0};
+export let navigationTimer = {time: 0.0};
 
 /**
  * Our update function, this will run every frame, and is responsible for moving the camera based on input.
@@ -42,7 +42,7 @@ let update = function(dt) {
 // Resize function to that will update the size of our game window when the browser window is resized
 let resize = function() {
     let width = window.innerWidth;
-    let height = window.innerHeight * 0.75;
+    let height = window.innerHeight;
 
     // Update the size of the GUI renderer
     guiRenderer.setSize(width, height);

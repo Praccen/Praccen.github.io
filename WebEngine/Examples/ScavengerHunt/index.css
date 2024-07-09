@@ -1,6 +1,6 @@
 * {font-family:'Courier New', Courier, monospace;}
 			
-body { margin: 0; overflow: hidden; position: absolute; background-color:rgb(0, 93, 93); white-space: pre;}
+body { margin: 0; overflow: hidden; position: absolute; background-color:rgb(0, 93, 93); color: #ffffff;}
 			
 canvas {position: absolute; }
 			
