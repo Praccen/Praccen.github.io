@@ -4995,16 +4995,6 @@ var Renderer = class {
     this.particleRenderPass.outputBuffer = this.finishedFramebuffer;
     this.finishedOutputRenderPass = new ScreenQuadPass(this.finishedFramebuffer.textures[0]);
   }
-  createShaders() {
-    createGeometryPassShaderProgram();
-    createLightingPassShaderProgram();
-    createDirectionalShadowShaderProgram();
-    createPointShadowShaderProgram();
-    createParticleShaderProgram();
-    createVolumetricLightingShaderProgram();
-    createSkyboxShaderProgram();
-    createScreenQuadShaderProgram();
-  }
   initGL() {
     this.domElement = document.createElement("canvas");
     gl = this.domElement.getContext("webgl2", { antialias: false });
@@ -5024,6 +5014,16 @@ var Renderer = class {
     gl.disable(gl.BLEND);
     gl.cullFace(gl.BACK);
     gl.enable(gl.CULL_FACE);
+  }
+  createShaders() {
+    createGeometryPassShaderProgram();
+    createLightingPassShaderProgram();
+    createDirectionalShadowShaderProgram();
+    createPointShadowShaderProgram();
+    createParticleShaderProgram();
+    createVolumetricLightingShaderProgram();
+    createSkyboxShaderProgram();
+    createScreenQuadShaderProgram();
   }
   setSize(x, y, updateStyle = false) {
     this.width = x;
@@ -5277,6 +5277,7 @@ var Transform = class {
     this.scale = vec3_exports.fromValues(1, 1, 1);
     this.origin = vec3_exports.create();
     this.matrix = mat4_exports.create();
+    this.normalMatrix = mat3_exports.create();
   }
   translate(translation) {
     vec3_exports.add(this.position, this.position, translation);
@@ -5284,17 +5285,18 @@ var Transform = class {
   setTranslation(translation) {
     vec3_exports.copy(this.position, translation);
   }
-  calculateMatrix(matrix = this.matrix, identityMatrixFirst = true) {
+  calculateMatrices(matrix = this.matrix, normalMatrix = this.normalMatrix, identityMatrixFirst = true) {
     if (identityMatrixFirst) {
       mat4_exports.identity(matrix);
     }
     if (this.parentTransform != void 0) {
-      this.parentTransform.calculateMatrix(matrix, false);
+      this.parentTransform.calculateMatrices(matrix, normalMatrix, false);
     }
     mat4_exports.translate(matrix, matrix, this.position);
     mat4_exports.multiply(matrix, matrix, mat4_exports.fromQuat(mat4_exports.create(), this.rotation));
     mat4_exports.scale(matrix, matrix, this.scale);
     mat4_exports.translate(matrix, matrix, vec3_exports.negate(vec3_exports.create(), this.origin));
+    mat3_exports.normalFromMat4(normalMatrix, matrix);
   }
 };
 
@@ -5312,7 +5314,6 @@ var GraphicsBundle = class {
     this.emissionColor = vec3_exports.fromValues(0, 0, 0);
     this.transform = new Transform();
     this.textureMatrix = mat4_exports.create();
-    this.normalMatrix = mat3_exports.create();
     this.graphicsObject = graphicsObject;
     this.enabled = true;
   }
@@ -5337,7 +5338,7 @@ var GraphicsBundle = class {
       }
       let normalReturn = this.graphicsObject.shaderProgram.getUniformLocation("normalMatrix");
       if (normalReturn[1]) {
-        gl.uniformMatrix3fv(normalReturn[0], false, this.normalMatrix);
+        gl.uniformMatrix3fv(normalReturn[0], false, this.transform.normalMatrix);
       }
       this.graphicsObject.draw();
     }
@@ -5505,14 +5506,18 @@ var Scene = class {
     this.pointLights = new Array();
   }
   addNewMesh(meshPath, diffusePath, specularPath) {
-    const length5 = this.graphicBundles.push(
-      new GraphicsBundle(
-        textureStore.getTexture(diffusePath),
-        textureStore.getTexture(specularPath),
-        meshStore.getMesh(geometryPassShaderProgram, meshPath)
-      )
-    );
-    return this.graphicBundles[length5 - 1];
+    return __async(this, null, function* () {
+      return meshStore.getMesh(geometryPassShaderProgram, meshPath).then((mesh) => {
+        const length5 = this.graphicBundles.push(
+          new GraphicsBundle(
+            textureStore.getTexture(diffusePath),
+            textureStore.getTexture(specularPath),
+            mesh
+          )
+        );
+        return this.graphicBundles[length5 - 1];
+      });
+    });
   }
   addNewParticleSpawner(texturePath, numberOfStartingParticles = 0) {
     let length5 = this.particleSpawners.push(
@@ -5539,7 +5544,7 @@ var Scene = class {
   }
   calculateAllTransforms() {
     for (let bundle of this.graphicBundles) {
-      bundle.transform.calculateMatrix();
+      bundle.transform.calculateMatrices();
     }
   }
   renderScene(shaderProgram, bindSpecialTextures = true) {
@@ -5605,6 +5610,9 @@ var Mesh = class extends GraphicsObject {
     this.vertices = data;
   }
   getVertexPositions() {
+    if (this.vertices == void 0) {
+      return null;
+    }
     let returnArr = new Array();
     for (let i = 0; i < this.vertices.length; i += 8) {
       returnArr.push(vec3_exports.fromValues(this.vertices[i], this.vertices[i + 1], this.vertices[i + 2]));
@@ -5626,17 +5634,42 @@ var MeshStore = class {
     this.heightmapMap = /* @__PURE__ */ new Map();
     this.textureStore = textureStore2;
   }
-  getMesh(shaderProgram, path, printWarnings = true) {
-    let mesh = this.meshMap.get(path);
-    if (mesh) {
-      return mesh;
-    }
-    this.meshMap.set(path, new Mesh(shaderProgram, null));
-    let newlyCreatedMesh = this.meshMap.get(path);
-    this.parseObjContent(path).then((data) => {
-      newlyCreatedMesh.setVertexData(data);
+  /**
+   * This function will load all meshes in paths. Invalid paths will result in an error in the console, but won't break functionality.
+   * @param paths Array of strings containing the paths to load
+   * @param progress Object with member loaded which will reflect how many meshes has currently been loaded
+   * @returns Promise<void> that resolves when all meshes has been loaded
+   */
+  loadMeshes(paths, progress) {
+    return __async(this, null, function* () {
+      return new Promise((resolve, rejects) => {
+        progress.loaded = 0;
+        for (let path of paths) {
+          this.getMesh(geometryPassShaderProgram, path).then(() => {
+            progress.loaded++;
+            if (progress.loaded == paths.length) {
+              resolve();
+            }
+          });
+        }
+      });
     });
-    return newlyCreatedMesh;
+  }
+  getMesh(shaderProgram, path) {
+    return __async(this, null, function* () {
+      let mesh = this.meshMap.get(path);
+      if (mesh) {
+        return new Promise((resolve, reject) => {
+          resolve(mesh);
+        });
+      }
+      this.meshMap.set(path, new Mesh(shaderProgram, null));
+      let newlyCreatedMesh = this.meshMap.get(path);
+      return this.parseObjContent(path).then((data) => {
+        newlyCreatedMesh.setVertexData(data);
+        return newlyCreatedMesh;
+      });
+    });
   }
   parseObjContent(meshPath) {
     return __async(this, null, function* () {
@@ -5816,9 +5849,7 @@ var MeshStore = class {
               }
             }
           }
-        } else if (line.startsWith("#")) {
-        } else if (line.length > 0) {
-        }
+        } else if (line.startsWith("#")) ; else if (line.length > 0) ;
       }
       let returnArr = new Float32Array(vertices.length * 8);
       for (let i = 0; i < vertices.length; i++) {
@@ -5865,6 +5896,7 @@ var GuiObject = class {
     this.scaleWithWindow = true;
     this.textString = "";
     this.center = false;
+    this.ignoreEngineModifiers = false;
     this.domElement = domElement;
     this.div = document.createElement("div");
     this.div.style.position = "absolute";
@@ -5897,6 +5929,9 @@ var GuiObject = class {
     this.removed = true;
   }
   drawObject() {
+    if (this.ignoreEngineModifiers) {
+      return;
+    }
     this.div.style.left = this.position2D[0] * 100 + "%";
     this.div.style.top = this.position2D[1] * 100 + "%";
     if (this.scaleWithWindow) {
@@ -5918,7 +5953,7 @@ var Button = class extends GuiObject {
     super(domElement, parentDiv);
     this.position = vec2_exports.create();
     this.textSize = 42;
-    this.inputNode = document.createElement("input");
+    this.inputNode = document.createElement("button");
     this.inputNode.type = "button";
     this.inputNode.className = "button";
     this.div.appendChild(this.inputNode);
@@ -5941,8 +5976,10 @@ var Button = class extends GuiObject {
   }
   draw() {
     this.position2D = this.position;
-    this.inputNode.value = this.textString;
     this.fontSize = this.textSize;
+    if (this.textString.length > 0) {
+      this.inputNode.innerText = this.textString;
+    }
     this.drawObject();
   }
 };
@@ -5956,6 +5993,7 @@ var Checkbox = class extends GuiObject {
     let container = document.createElement("label");
     container.className = "checkboxContainer";
     this.label = document.createElement("label");
+    this.label.style.fontSize = "inherit";
     this.inputNode = document.createElement("input");
     this.inputNode.type = "checkbox";
     let checkmarkNode = document.createElement("span");
@@ -6880,6 +6918,7 @@ var OBB = class extends Shape {
   getTransformedNormals() {
     if (this.normalsNeedsUpdate) {
       this.transformedNormals.length = 0;
+      let resultingMatrix = mat4_exports.mul(mat4_exports.create(), this.inverseMatrix, this.transformMatrix);
       for (const originalNormal of this.originalNormals) {
         this.transformedNormals.push(
           vec3_exports.normalize(
@@ -6887,7 +6926,7 @@ var OBB = class extends Shape {
             vec3_exports.transformMat3(
               vec3_exports.create(),
               originalNormal,
-              mat3_exports.normalFromMat4(mat3_exports.create(), this.transformMatrix)
+              mat3_exports.normalFromMat4(mat3_exports.create(), resultingMatrix)
             )
           )
         );
@@ -6960,8 +6999,9 @@ var PhysicsScene = class {
   }
   update(dt) {
     for (let physicsObject of this.physicsObjects) {
-      physicsObject.transform.calculateMatrix();
+      physicsObject.transform.calculateMatrices();
       physicsObject.boundingBox.setUpdateNeeded();
+      physicsObject.onGround = false;
     }
     for (let i = 0; i < this.physicsObjects.length; i++) {
       let physicsObject = this.physicsObjects[i];
@@ -6982,7 +7022,7 @@ var PhysicsScene = class {
         let translation = vec3_exports.scale(vec3_exports.create(), vec3_exports.add(vec3_exports.create(), oldVelocity, physicsObject.velocity), 0.5 * dt);
         if (vec3_exports.len(translation) > 1e-3) {
           physicsObject.transform.translate(translation);
-          physicsObject.transform.calculateMatrix();
+          physicsObject.transform.calculateMatrices();
         }
       }
     }
@@ -7067,22 +7107,7 @@ var applicationStartTime = Date.now();
 var textureStore = new TextureStore();
 var meshStore = new MeshStore(textureStore);
 common_exports.setMatrixArrayType(Array);
-export {
-  Camera,
-  GUIRenderer,
-  MousePicking,
-  PhysicsObject,
-  PhysicsScene,
-  Ray,
-  Renderer,
-  Scene,
-  Transform,
-  applicationStartTime,
-  mat4_exports as mat4,
-  meshStore,
-  quat_exports as quat,
-  textureStore,
-  vec2_exports as vec2,
-  vec3_exports as vec3
-};
+
+export { Camera, GUIRenderer, GraphicsBundle, MousePicking, PhysicsObject, PhysicsScene, Ray, Renderer, Scene, Transform, applicationStartTime, mat3_exports as mat3, mat4_exports as mat4, meshStore, quat_exports as quat, textureStore, vec2_exports as vec2, vec3_exports as vec3 };
+//# sourceMappingURL=out.js.map
 //# sourceMappingURL=Engine.esm.js.map
