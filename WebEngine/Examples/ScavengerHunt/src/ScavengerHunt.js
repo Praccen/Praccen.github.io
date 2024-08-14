@@ -1,6 +1,7 @@
 import * as ENGINE from "../../../dist/Engine.esm.js"
 import MissionList from "./MissionList.js";
 import { NavigationView } from "./NavigationView.js";
+import { GetCookie } from "./WebUtils.js";
 
 // Create a GUI renderer and attach it to the document body
 export let guiRenderer = new ENGINE.GUIRenderer();
@@ -10,15 +11,20 @@ document.body.appendChild(guiRenderer.domElement);
 guiRenderer.domElement.className = "guiContainer";
 
 export let mainMenuDiv = guiRenderer.getNewDiv();
+mainMenuDiv.ignoreEngineModifiers = true;
 mainMenuDiv.getElement().style.width = "100%";
 mainMenuDiv.getElement().style.height = "100%";
+mainMenuDiv.getElement().style.display = "flex";
+mainMenuDiv.getElement().style.flexDirection = "column";
+mainMenuDiv.getElement().style.overflowY = "auto";
 
 let missions = new MissionList();
 missions.createGui(mainMenuDiv);
 
 let navigationView = null;
 
-export let navigationTimer = {time: 0.0};
+export let navigationTimer = {time: parseFloat(GetCookie("t"))};
+// export let navigationTimer = {time: 9999999999};
 
 /**
  * Our update function, this will run every frame, and is responsible for moving the camera based on input.
@@ -27,7 +33,7 @@ export let navigationTimer = {time: 0.0};
  */
 let update = function(dt) {
     if (navigationTimer.time > 0.0 && navigationView == undefined) {
-        mainMenuDiv.setHidden(true);
+        mainMenuDiv.getElement().style.display = "none";
         navigationView = new NavigationView(navigationTimer.time);
     }
     else if (navigationView != undefined && navigationTimer.time <= 0.0) {
@@ -37,6 +43,10 @@ let update = function(dt) {
     if (navigationView != undefined) {
         navigationView.update(dt);
     }
+
+    // if (Date.now() > 1723643760000) {
+    //     location.reload(true); // Refresh the page to show the location
+    // }
 }
 
 // Resize function to that will update the size of our game window when the browser window is resized
