@@ -31,7 +31,7 @@ canvas {position: absolute; }
 	font-size: inherit;
 	font-family: inherit;
 	color: #F7E4C7;
-	padding: 5px 20px;
+	padding: 5px 5px;
 	transition: all 0.1s;
 	cursor: pointer;
 
