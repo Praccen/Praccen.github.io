@@ -1,3 +1,7 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	margin: 0 auto;
 	background-color: #ede6da;
@@ -84,7 +88,7 @@ a:hover {
 
 img {
 	width: 100%;
-	margin: 0px 20px;
+	margin: 0px 0px;
 }
 
 h1 {
