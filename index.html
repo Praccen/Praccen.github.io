@@ -7,10 +7,7 @@
 </head>
 
 <body>
-	<div class="background-block">
-	</div>
-	
-	<div class="header">
+	<div class="header" style="background-color: transparent; z-index: 5;">
 		<h1>
 			Gustav Björk
 		</h1>
@@ -21,7 +18,11 @@
 	</div>
 
 	<div class="content">
-		<img src="./assets/Jag3.jpg" alt="Me">
+		<div style="position: relative;">
+			<img src="./assets/Jag3.jpg" class="bg-image-blur" style="z-index: -10;">
+			<img src="./assets/Jag3.jpg" class="bg-image" alt="Me" style="z-index: -9; position: relative;">
+		</div>
+
 		<h1>
 			Hello!
 		</h1>
@@ -40,9 +41,7 @@
 			<a href="portfolio.html"> Go to portfolio</a>
 		</p>
 		
-		<img src="./assets/Jag2.jpg" alt="Me revieving an award for bold decision of the year at the MSAB kick-off">
-		
-		
+		<img src="./assets/WIP/TeaserImage.png" alt="One of my ongoing game projects">
 	</div>
 
 </body>

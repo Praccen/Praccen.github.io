@@ -4,9 +4,8 @@ html {
 
 body {
 	margin: 0 auto;
-	background-color: #ede6da;
+	background-color: #271613;
 	font-family: "Courier New", Courier, monospace;
-	max-width: 1000px;
 }
 
 .header {
@@ -17,23 +16,15 @@ body {
 	overflow: hidden;
 	height: 140px;
 	text-align: center;
+	background-color: #00000032;
 }
 
 .background-block {
-	position:fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	overflow: hidden;
 	height: 140px;
-	background-color: #ede6da;
-	
-	/* IE */
-	filter: alpha(opacity=80);
-	/* Mozilla */
-	-moz-opacity: 0.8;
-	/* CSS3 */
-	opacity: 0.8;
+}
+
+.header h1 {
+	background-color: transparent;
 }
 
 .header a {
@@ -45,30 +36,48 @@ body {
 
 .header a:link {
 	text-decoration: None;
-	color: black;
+	color: rgb(199, 174, 133);
 }
 .header a:visited {
-	color: black;
+	color: rgb(199, 174, 133);
+}
+.header a:hover {
+	color: #363636;
+	background-color: rgb(199, 174, 133);
 }
 
 a {
-	color: #919e93;
+	color: rgb(199, 174, 133);
 }
 
 a:hover {
-	color: #E6D9C6;
-	background-color: #919e93;
+	color: #363636;
+	background-color: rgb(199, 174, 133);
 }
 
 .header h1 {
-	color: #758077;
+	color: rgb(199, 174, 133);
 	margin-top: 30px;
+}
+
+.teaserarea {
+	margin-top: 0;
+	overflow-x: hidden;
+	left: 0;
+	width: 100%;
+	object-fit: cover;
+}
+
+.teaserarea a:hover {
+	color: #00000000;
+	background-color: #00000000;
+	transform: scale(1.5);
 }
 
 .content {
 	margin: auto;
-	margin-top: 140px;
-	overflow-x: hidden;
+	overflow-x: visible;
+	max-width: 1000px;
 }
 
 .container {
@@ -83,7 +92,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-	margin: 0px 20px;
+	margin: 0px 0px;
 }
 
 img {
@@ -91,18 +100,35 @@ img {
 	margin: 0px 0px;
 }
 
+.bg-image-blur,
+.bg-image {
+  position: absolute;
+	height: fit-content;
+}
+
+.bg-image-blur {
+  -webkit-filter: blur(20px);
+  -moz-filter: blur(20px);
+  -o-filter: blur(20px);
+  -ms-filter: blur(20px);
+  filter: blur(20px);
+}
+
 h1 {
 	margin-top: 5px;
 	padding: 0px 20px;
+	color: rgb(199, 174, 133);
+	background-color: #0000007c;
 }
 
 p {
 	padding: 0px 20px;
-	color: black;
+	color: rgb(213, 107, 81);
 	font-size: 18px;
 }
 
 hr {
     margin-top: 60px;
     margin-bottom: 60px;
+		background-color: rgb(191, 79, 51);
 }
